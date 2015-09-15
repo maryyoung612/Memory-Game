@@ -11,6 +11,9 @@ public class Runner
 					MakeBoard.fillBoard();
 					PlayerMove.chooseSpace();
 					MakeBoard.displayBoard();
+					PlayerMove.chooseSpace();
+					MakeBoard.displayBoard();
+					PlayerMove.check();
 					}
 			}
 	}
