@@ -1,42 +1,43 @@
 import java.util.Scanner;
 public class PlayerMove
 	{
-		static String userChoice;
-		static int columnChoice;
-		public static void Choose()
-			{
-				System.out.println("Please input the cordinates for your guess");
-			}
-		public static void checkMatch()
+		static int choice;
+		static String rowChoice;
+		public static void chooseSpace()
 			{
 				Scanner userInput= new Scanner(System.in);
-				PlayerMove.userChoice = userInput.nextLine();
-				boolean userChoice=false;
-				while(userChoice==false)
+				System.out.println("Please input the cordinates for your guess");
+				rowChoice = userInput.nextLine();
+				boolean rowChoice=false;
+				while(rowChoice==false)
 					{
-						if((PlayerMove.userChoice.length()<=1)||(PlayerMove.userChoice.length()>=3))
+						if((PlayerMove.rowChoice.length()<=1)||(PlayerMove.rowChoice.length()>=3))
 							{
 							System.out.println("You need to enter in cordinates");
 							}
-						else if(PlayerMove.userChoice.toLowerCase().equals("a"))
+						else if(PlayerMove.rowChoice.toLowerCase().contains("a"))
 							{
-								columnChoice=Integer.parseInt(PlayerMove.userChoice.substring(1))-1;
-								MakeBoard.spaces[1][columnChoice]= ;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								MakeBoard.space[0][choice]= MakeBoard.words[0][choice];
+								rowChoice=true;
 							}
-						else if(PlayerMove.userChoice.toLowerCase().equals("b"))
+						else if(PlayerMove.rowChoice.toLowerCase().contains("b"))
 							{
-								columnChoice=Integer.parseInt(PlayerMove.userChoice.substring(1))-1;
-								MakeBoard.spaces[1][columnChoice]= ;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								MakeBoard.space[1][choice]=  MakeBoard.words[1][choice];
+								rowChoice=true;
 							}
-						else if(PlayerMove.userChoice.toLowerCase().equals("c"))
+						else if(PlayerMove.rowChoice.toLowerCase().contains("c"))
 							{
-								columnChoice=Integer.parseInt(PlayerMove.userChoice.substring(1))-1;
-								MakeBoard.spaces[1][columnChoice]= ;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								MakeBoard.space[2][choice]=  MakeBoard.words[2][choice];
+								rowChoice=true;
 							}
-						else if(PlayerMove.userChoice.toLowerCase().equals("d"))
+						else if(PlayerMove.rowChoice.toLowerCase().contains("d"))
 							{
-								columnChoice=Integer.parseInt(PlayerMove.userChoice.substring(1))-1;
-								MakeBoard.spaces[1][columnChoice]= ;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								MakeBoard.space[3][choice]=  MakeBoard.words[3][choice];
+								rowChoice=true;
 							}
 					}
 			}

@@ -2,15 +2,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 public class MakeBoard
 	{
-		static String spaces[][]= new String[4][4];
+		static String words[][]= new String[4][4];
+		static String space[][]= new String[4][4];
 		public static void genBoard()
 			{
 				
-				for(int i=0;i<spaces.length;i++)
+				for(int i=0;i<words.length;i++)
 					{
-						for(int m=0;m<spaces[0].length;m++)
+						for(int m=0;m<words[0].length;m++)
 							{
-								spaces[i][m]="   ";
+								words[i][m]="   ";
+							}
+					}
+				for(int j=0;j<space.length;j++)
+					{
+						for(int k=0;k<space[0].length;k++)
+							{
+								space[j][k]="   ";
 							}
 					}
 			}
@@ -18,13 +26,13 @@ public class MakeBoard
 			{
 				System.out.println("    1      2      3      4    ");
 				System.out.println("  ------ ------ ------ ------ ");
-				System.out.println("A | "+spaces[0][0]+" | "+spaces[0][1]+"  | "+spaces[0][2]+"  | "+spaces[0][3]+" |");
+				System.out.println("A | "+space[0][0]+" | "+space[0][1]+"  | "+space[0][2]+"  | "+space[0][3]+" |");
 				System.out.println("  ------ ------ ------ ------ ");
-				System.out.println("B | "+spaces[1][0]+" | "+spaces[1][1]+"  | "+spaces[1][2]+"  | "+spaces[1][3]+" |");
+				System.out.println("B | "+space[1][0]+" | "+space[1][1]+"  | "+space[1][2]+"  | "+space[1][3]+" |");
 				System.out.println("  ------ ------ ------ ------ ");
-				System.out.println("C | "+spaces[2][0]+" | "+spaces[2][1]+"  | "+spaces[2][2]+"  | "+spaces[2][3]+" |");
+				System.out.println("C | "+space[2][0]+" | "+space[2][1]+"  | "+space[2][2]+"  | "+space[2][3]+" |");
 				System.out.println("  ------ ------ ------ ------ ");
-				System.out.println("D | "+spaces[3][0]+" | "+spaces[3][1]+"  | "+spaces[3][2]+"  | "+spaces[3][3]+" |");
+				System.out.println("D | "+space[3][0]+" | "+space[3][1]+"  | "+space[3][2]+"  | "+space[3][3]+" |");
 				System.out.println("  ------ ------ ------ ------ ");
 			}
 		public static void fillBoard()
@@ -47,11 +55,11 @@ public class MakeBoard
 				boardSpaces.add("bee");
 				boardSpaces.add("cow");
 				int counter= 0;
-				for(int o=0;o<spaces.length;o++)
+				for(int o=0;o<words.length;o++)
 					{
-						for(int p=0;p<spaces[0][0].length();p++)
+						for(int p=0;p<words[0][0].length();p++)
 							{
-							spaces[o][p]=boardSpaces.get(counter);
+							words[o][p]=boardSpaces.get(counter);
 							counter++;
 							}
 					}
