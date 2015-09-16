@@ -4,9 +4,9 @@ public class MakeBoard
 	{
 		static String words[][]= new String[4][4];
 		static String space[][]= new String[4][4];
+		static ArrayList <String> boardSpaces = new ArrayList<String>();
 		public static void genBoard()
 			{
-				
 				for(int i=0;i<words.length;i++)
 					{
 						for(int m=0;m<words[0].length;m++)
@@ -37,27 +37,26 @@ public class MakeBoard
 			}
 		public static void fillBoard()
 			{
-				ArrayList <String> boardSpaces = new ArrayList<String>();
-				boardSpaces.add("dog");
+				boardSpaces.add("Fox");
+				boardSpaces.add("elk");
+				boardSpaces.add("cow");
 				boardSpaces.add("elk");
 				boardSpaces.add("cat");
 				boardSpaces.add("rat");
+				boardSpaces.add("dog");
+				boardSpaces.add("bee");
 				boardSpaces.add("owl");
 				boardSpaces.add("dog");
 				boardSpaces.add("bee");
-				boardSpaces.add("cow");
-				boardSpaces.add("dog");
-				boardSpaces.add("elk");
 				boardSpaces.add("cat");
+				boardSpaces.add("cow");
+				boardSpaces.add("Fox");
 				boardSpaces.add("rat");
 				boardSpaces.add("owl");
-				boardSpaces.add("dog");
-				boardSpaces.add("bee");
-				boardSpaces.add("cow");
 				int counter= 0;
 				for(int o=0;o<words.length;o++)
 					{
-						for(int p=0;p<words[0][0].length();p++)
+						for(int p=0;p<words[0].length;p++)
 							{
 							words[o][p]=boardSpaces.get(counter);
 							counter++;

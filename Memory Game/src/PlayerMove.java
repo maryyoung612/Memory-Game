@@ -3,7 +3,9 @@ public class PlayerMove
 	{
 		static int choice;
 		static String rowChoice;
+		static String save;
 		static String savedChoice;
+		static String savedChoice2;
 		public static void chooseSpace()
 			{
 				System.out.println("Please input the cordinates for your guess");
@@ -18,46 +20,48 @@ public class PlayerMove
 							}
 						else if(PlayerMove.rowChoice.toLowerCase().contains("a"))
 							{
-								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1,2))-1;
 								MakeBoard.space[0][choice]= MakeBoard.words[0][choice];
-								PlayerMove.savedChoice= MakeBoard.space[0][choice];
+								PlayerMove.save= "0"+ PlayerMove.rowChoice.substring(1,2);
 								rowChoice=true;
 							}
 						else if(PlayerMove.rowChoice.toLowerCase().contains("b"))
 							{
-								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1,2))-1;
 								MakeBoard.space[1][choice]= MakeBoard.words[1][choice];
-								PlayerMove.savedChoice= MakeBoard.space[1][choice];
+								PlayerMove.save= "1"+ PlayerMove.rowChoice.substring(1,2);
 								rowChoice=true;
 							}
 						else if(PlayerMove.rowChoice.toLowerCase().contains("c"))
 							{
-								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1,2))-1;
 								MakeBoard.space[2][choice]= MakeBoard.words[2][choice];
-								PlayerMove.savedChoice= MakeBoard.space[2][choice];
+								PlayerMove.save= "2"+ PlayerMove.rowChoice.substring(1,2);
 								rowChoice=true;
 							}
 						else if(PlayerMove.rowChoice.toLowerCase().contains("d"))
 							{
-								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1))-1;
+								choice=Integer.parseInt(PlayerMove.rowChoice.substring(1,2))-1;
 								MakeBoard.space[3][choice]= MakeBoard.words[3][choice];
-								PlayerMove.savedChoice= MakeBoard.space[3][choice];
+								PlayerMove.save= "3"+ PlayerMove.rowChoice.substring(1,2);;
 								rowChoice=true;
 							}
 					}
 			}
 		public static void check() throws InterruptedException
 		{
-			if(PlayerMove.savedChoice.equals(PlayerMove.savedChoice))
+			if(MakeBoard.space[Integer.parseInt(PlayerMove.savedChoice.substring(0,1))][Integer.parseInt(PlayerMove.savedChoice.substring(1,2))-1].contains(
+					
+			MakeBoard.space[Integer.parseInt(PlayerMove.savedChoice2.substring(0,1))][Integer.parseInt(PlayerMove.savedChoice2.substring(1,2))-1]))
 				{
-					PlayerMove.savedChoice = MakeBoard.space[0][PlayerMove.choice];
 					System.out.println("They match!");
 				}
 			else
 				{
 					System.out.println("They do not match!");
+					MakeBoard.space[Integer.parseInt(PlayerMove.savedChoice.substring(0,1))][Integer.parseInt(PlayerMove.savedChoice.substring(1,2))-1]="   ";
+					MakeBoard.space[Integer.parseInt(PlayerMove.savedChoice2.substring(0,1))][Integer.parseInt(PlayerMove.savedChoice2.substring(1,2))-1]="   ";
 					Thread.sleep(2000);
-					choice=Integer.parseInt(PlayerMove.rowChoice.substring(1,2))-1)="   ";
 				}
 		}
 	}
